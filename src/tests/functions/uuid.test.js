@@ -1,6 +1,6 @@
 import randomString from 'random-string';
 import { uuid } from '../../utils/uuid'
-import { models } from '../../../models';
+import models from '../../../models';
 
 afterAll(() => models.sequelize.close())
 
@@ -12,7 +12,7 @@ test('ordered UUID 가 출력되어야 합니다.', () => {
 
 test('사용자를 생성하면 uuid가 정상 생성되어야 합니다.', async () => {
   const user = await models.User.create({
-    email: `${randomString}@test.com`,
+    email: `${randomString()}@test.coma`,
     password: randomString()
   })
 

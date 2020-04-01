@@ -1,12 +1,12 @@
 import express from 'express'
-import { get, insert, update, remove } from '../../controllers/v1/user.controller'
+import { get } from '../../controllers/v1/user.controller'
 
 const router = express.Router()
 
-router.route('/')
+router.route('/:uuid?')
   .get(get)
-  .post(insert)
-  .put(update)
-  .delete(remove)
+// .post(insert)
+// .put(update)
+// .delete(remove)
 
 export default router
