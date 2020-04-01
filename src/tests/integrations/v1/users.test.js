@@ -27,6 +27,7 @@ describe('GET: /v1/users', () => {
   test('전체 사용자 조회. | 200', async () => {
     let response = await request(app)
       .get(`/v1/users`)
+    console.log(response);
 
     expect(response.body.length)
       .toBeGreaterThan(1)

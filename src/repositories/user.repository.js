@@ -2,7 +2,7 @@ import models from '../../models';
 
 export default {
   // CREATE
-  store: async (data) => await models.User.create(data),
+  // store: async (data) => await models.User.create(data),
 
   // READ
   all: async () => await models.User.findAll(),
@@ -15,7 +15,7 @@ export default {
     })
   },
 
-  findById: async (id) => await models.User.findByPk(id)
+  // findById: async (id) => await models.User.findByPk(id)
 
   // UPDATE
   // DELETE
