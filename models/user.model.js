@@ -1,7 +1,18 @@
 'use strict'
 
+import { uuid } from '../src/utils/uuid';
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
+    uuid: {
+      allowNull: false,
+      unique: true,
+      type: 'BINARY(16)',
+      defaultValue: () => Buffer(uuid(), 'hex'),
+      get: function () {
+        return Buffer.from(this.getDataValue('uuid')).toString('hex')
+      }
+    },
     email: {
       allowNull: false,
       unique: true,
